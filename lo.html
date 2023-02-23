@@ -1,322 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <base target="_top">
-    <script>
-    function AddRow()
-    {
-           
-      google.script.run.AddRecord();
-         
-    }
-    </script>
-    <script>
-    function LoginUser()
-    {
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-     
-     google.script.run.AddRecord(username) 
-          document.getElementById("username").value = '';   
-    
-    google.script.run.withSuccessHandler(function(output) 
-    {
-      if(output == 'TRUE')
-      {
-        document.getElementById("loginDisplay").style.display = "none";
-        document.getElementById("dataDisplay").style.display = "block";     
-      }
-      else if(output == 'FALSE')
-      {
-        document.getElementById("errorMessage").innerHTML = "Failed to Login";     
-      }    
-    }).checkLogin(username, password);
-    }
-    </script>
-</head>
-
-<style>
-     
-@media screen and (orientation: portrait) { 
-
-input {
-  width: 80%;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 1px;
-  
-}
-
- } 
+<script>
+function validateForm() {
  
- 
- @media only screen and (orientation: landscape) {
-     
-  input {
-  width: 50%;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 1px;
   
-}
-     
- }
-
-.center-block { display: block; margin-right: auto; margin-left: auto; }
-
-input[type=button] {
-  background-color:blue;
-  color: white;
-  font-family:Fantasy;
-}
+  var password = document.getElementById("password").value;
+ if (password=="23" || password=="123") {
    
-</style>
-
-
-<body style="background-color:white" >
-    <h1 style="text-align:center;display:block;font-family:Fantasy">BMTV Premium Login</h1>
     
-    
-    <div id="loginDisplay">
-       <b> <label style="text-align:center;display:block;font-size:110%;font-family:Fantasy" >UserName</label>
-        <input class="center-block" type="text" id="username" /><br />
-        <label  style="text-align:center;display:block;font-size:110%;font-family:Fantasy"  >Password</label>
-        <input class="center-block" type="password" id="password" /><br>
-        <input class="center-block" type="button" value="Login" onclick="LoginUser()" /><br>
-        <span id="errorMessage" style="color: red" ></span>
-    </div>
-    <hr>
-    <div style="display:none"  id="dataDisplay">
-    <center><br>
-    
-      <div>
-        <label>Welcome </label><br>
-      </div><br>
-          <div>
-
-<!DOCTYPE html>
-<html>
-<style>
-.bcolor { background-color:white; border-radius:10px; }  a.channel:hover{ border:3px solid #FFF000; color:white; background-color: #033E3E; } a.gdrive:hover{ border:3px solid #FFF000; color:white; background-color:#033E3E; } a.scrol:hover{ background-color:#66FF00; border-radius:10px; } div.scrollmenu { overflow : auto; white-space: nowrap; } div.scrollmenu a { display:inline-block; color: red; text-align: center; text-decoration: none; } img.scroll{ width:150px; height:6rem; margin:5px 5px; border:2px solid blue; border-radius:10px; } * {box-sizing: border-box;} body {font-family: Verdana, sans-serif;} .mySlides {display: none;} img { display: block; border-radius:10px; margin-left: auto; margin-right: auto; width:80%; } .slideshow-container { max-width: 1000px; position: relative; margin: auto; } .dot { height: 5px; width: 5px; margin: auto; background-color: #bbb; border-radius: 50%; display: inline-block; transition: background-color 0.6s ease; } .active { background-color: #717171; } .fade { -webkit-animation-name: fade; -webkit-animation-duration: 1.5s; animation-name: fade; animation-duration: 1.5s; } @-webkit-keyframes fade { from {opacity: .4} to {opacity: 1} } @keyframes fade { from {opacity: .4} to {opacity: 1} } @media only screen and (orientation: landscape) { img { display: block; border-radius:10px; width:40%; margin-left: auto; margin-right: auto; } } 
-
-@media only screen and (orientation:portrait) { * { box-sizing: border-box; } .column { float: bottom; width:100%; padding:7.5px; } .row::after { content: ""; clear: both; display: table; } 
-
-a.channel{ text-decoration:none; color:#660000; font-size:130%; border:3px solid red; line-height:50px; font-family:Fantasy; border-radius: 10px; text-align:center;display:block; } a.gdrive{ text-decoration:none; color:#660000; font-size:140%; border:3px solid red; line-height:50px; font-family:Fantasy; border-radius: 10px; text-align:center;display:block; }
-
-
+  
+  }
+  else{
+    alert("Wrong Number");
+    return false;
+  }
 }
 
-@media only screen and (orientation: landscape){ * { box-sizing: border-box; } .column { float: left; width:50%; padding:7.5px;display: block;margin-left: auto;margin-right: auto; } .row::after { content: ""; clear: both; display: table;} 
-
-
-a.channel{ text-decoration:none; color:#660000; font-size:130%; border:3px solid red; line-height:65px; font-family:Fantasy; border-radius: 10px; text-align:center;display:block; } a.gdrive{ text-decoration:none; color:#660000; font-size:140%; border:3px solid red; line-height:65px; font-family:Fantasy; border-radius: 10px; text-align:center;display:block; }
-
-
-}
-</style> 
-
-
-<!--<button onclick="myFunction()">Basic Information</button>-->
-<script>
-function myFunction() {
-  location.replace("https://kyawsoeh.github.io/jay007.github.io/")
-}
 </script>
 </head>
-<body style="background-color:black">
-</html> 
-</div>
+<body>
 
+<h2>JavaScript validation for empty input field</h2>
+<p>Try to submit the form without entering any text.</p>
 
-
-<div class="slideshow-container">
-<div class="mySlides fade">
-   <img src="https://i.postimg.cc/d0N8CcL6/Picsart-22-12-31-16-53-51-959.jpg" >
-
-</div>
-
-<div class="mySlides fade">
-   <img src="https://i.postimg.cc/MK0VDQnv/Picsart-22-12-31-16-55-49-705.jpg" >
-  
-</div>
-
-<div class="mySlides fade">
-    <img src="https://i.postimg.cc/s2xWsHwh/Picsart-22-12-31-16-57-21-367.jpg" >
-  
-</div>
-</div>
-
-
-<div style="text-align:center">
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-</div>
-
-<div class="scrollmenu">
-
-<a class ="scrol"href="go:hligh"><img class="scroll"  src ="https://telegra.ph/file/c8b99d2b9b7fdba4a20f1.jpg "></a>
-
-<a class ="scrol"href="go:live"><img class="scroll"  src ="https://i.postimg.cc/2S2VSq2F/Picsart-22-08-18-20-40-48-359.jpg "></a>
-
-
-<a class ="scrol"href="go:supers"><img class="scroll"  src ="https://i.postimg.cc/L8fn8z42/Picsart-22-08-17-22-09-23-074.jpg "></a>
-
-<a class ="scrol"href="go:astrotrue"><img class="scroll"  src ="https://i.postimg.cc/XYrwMRpL/Picsart-23-01-11-15-17-30-710.jpg "></a>
-
-
-<a class ="scrol"href="go:sky " > <img class="scroll"  src ="https://telegra.ph/file/fc31807af711106e8f443.jpg"></a>
-
-
-
-
-
-<a class="scrol" href="go:mutv "><img class="scroll" src ="https://i.postimg.cc/j51nT9Pt/Picsart-22-07-18-14-13-50-201.jpg "></a>
-      
-<a class ="scrol"href="go:rmtv "><img class="scroll"  src ="https://i.postimg.cc/x1VxYp3v/Picsart-22-07-18-14-15-38-552.jpg "></a>
-
-</div>
-
-<div class="row">
-<div class="column">
-<div class="bcolor">
-<b><a class="channel" href="go:fb1">Facebook Page</a>
-</div>
-</div>
-
-<div class="column">
-<div class="bcolor">
-<b><a class="channel" href="go:update" >Version 2.0 တင်နည်း</a>
-</div>
-</div>
-<div class="column">
-<div class="bcolor">
-<b><a class="channel" href="go:cupdate" >Version 2.0 ဟုတ်မဟုတ်စစ်ရန်</a>
-</div>
-</div>
-
-<div class="column">
-<div class="bcolor">
-<b><a class="channel" href="go:telegram" >MOVIE  ( Telegram )</a>
-</div>
-</div>
-
-<div class="column">
-<div class="bcolor">
-<b><a class="channel" href="go:mp">MOVIE  ( Premium Only )</a>
-</div>
-</div>
-
-<div class="column">
-<div class="bcolor">
-<b><a class="gdrive" href="go:msubm">Gdrive Movie & Series 1</a>
-</div>
-</div>
-
-<div class="column">
-<div class="bcolor">
-<b><a class="gdrive" href="go:gdrive">Gdrive Movie & Series 2</a>
-</div>
-</div>
-
-<div class="column">
-<div class="bcolor">
-<a class="channel" href="go:zm" >Zego MSub Movie & Series</a>
-</div>
-</div>
-
-<div class="column">
-<div class="bcolor">
-<a class="channel" href="go:Mmsubm" >MM Subtitle Movie</a>
-</div>
-</div>
-
-<div class="column">
-<div class="bcolor">
-<a class="channel" href="go:todaylive">TODAY FOOTBALL LIVE</a>
-</div>
-</div>
-
-<div class="column">
-<div class="bcolor">
-<a class="channel" href="go:sp" >SPORT Channels</a>
-</div>
-</div>
-
-<div class="column">
-<div class="bcolor">
-<a class="channel" href="go:movie" >MOVIE Channels</a>
-</div>
-</div>
-
-<div class="column">
-<div class="bcolor">
-<a class="channel" href="go:music">MUSIC Channels</a>
-</div>
-</div>
-
-<div class="column">
-<div class="bcolor">
-<a class="channel" href="go:docu">DOCUMENT & NEWS Channels</a>
-</div>
-</div>
-
-<div class="column">
-<div class="bcolor">
-<a class="channel" href="go:myan">MYANMAR</a>
-</div>
-</div>
-
-<div class="column">
-<div class="bcolor">
-<a class="channel" href="go:india" >INDIA Channels</a>
-</div>
-</div>
-
-<div class="column">
-<div class="bcolor">
-<a class="channel" href="go:thai">Thailand Channels</a>
-</div>
-</div>
-
-<div class="column">
-<div class="bcolor">
-<a class="channel"href="go:cartoon" >CARTOON Channels</a>
-</div></div></div>
-
-
-<script>
-var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides,10000); // Change image every 2 seconds
-}
-</script>
-
-<!--<center><iframe src="https://kyawsoeh.github.io/jay007.github.io/" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></center>-->
-
-    </script>
+<form name="myForm" action="go:home" onsubmit="return validateForm()" method="post" required>
+ <input class="center-block" type="password" id="password" /><br>
+  <input type="submit" value="Submit">
+</form>
 
 </body>
-
 </html>
