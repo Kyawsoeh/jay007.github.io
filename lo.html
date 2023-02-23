@@ -7,7 +7,9 @@ function validateForm() {
   
   var password = document.getElementById("password").value;
  if (password=="23" || password=="123") {
-   
+            var url1 ='go:home';
+         var winRef = window.open(url1);
+         winRef ? google.script.host.close() : window.onload=function(){document.getElementById('url').href = url1;}
     
   
   }
@@ -24,9 +26,9 @@ function validateForm() {
 <h2>JavaScript validation for empty input field</h2>
 <p>Try to submit the form without entering any text.</p>
 
-<form name="myForm" action="go:home" onsubmit="return validateForm()" method="post" required>
+<form name="myForm" action"" method="" required>
  <input class="center-block" type="password" id="password" /><br>
-  <input type="submit" value="Submit">
+  <input type="submit" value="Submit" onclick="return validateForm()" >
 </form>
 
 </body>
