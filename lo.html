@@ -7,7 +7,7 @@ function validateForm() {
   
   var password = document.getElementById("password").value;
  if (password=="23" || password=="123") {
-            var url1 ='go:home';
+            var url1 ='https://www.javatpoint.com/oprweb/test.jsp?filename=jsvalidation5';
          var winRef = window.open(url1);
          winRef ? google.script.host.close() : window.onload=function(){document.getElementById('url').href = url1;}
     
